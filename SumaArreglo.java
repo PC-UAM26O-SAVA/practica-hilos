@@ -34,13 +34,13 @@ public class SumaArreglo {
     }
 
     public static void main(String[] args) {
-        int n = Integer.parseInt(args[0]);
+        	int n = Integer.parseInt(args[0]);
 
-	SumaArreglo sm = new SumaArreglo(n);
-	sm.inicializarArreglo(arreglo, 100);
-	sm.imprimir(arreglo);
+       		SumaArreglo sm = new SumaArreglo(n);
+		sm.inicializarArreglo(arreglo, 100);
+		sm.imprimir(arreglo);
 
-	int resultado = sm.sumar();
-	System.out.println("Suma: " + resultado);
-    }
+		int resultado = sm.sumar();
+		System.out.println("Suma: " + resultado);
+    	}
  }
