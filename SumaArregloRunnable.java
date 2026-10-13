@@ -1,7 +1,7 @@
 import java.util.Arrays;
 import java.util.Random;
 
-public class SumaArreglo extends Thread {
+public class SumaArreglo implements Runnable {
     static int hilos = 1;
     static int[] resultado = null;
     static int[] arreglo = null;
