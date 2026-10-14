@@ -1,7 +1,5 @@
 # Práctica de Hilos en Java
 
-#Datos del alumno
-
 Sherlyne Alexia Vega Andrade 
 2213042134
 
