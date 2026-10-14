@@ -1,13 +1,13 @@
 import java.util.Arrays;
 import java.util.Random;
 
-public class SumaArreglo implements Runnable {
+public class SumaArregloRunnable implements Runnable {
     static int hilos = 1;
     static int[] resultado = null;
     static int[] arreglo = null;
     private int id = -1;
 
-    SumaArreglo(int id) {
+    SumaArregloRunnable(int id) {
 	this.id = id;
     }
 
@@ -28,9 +28,7 @@ public class SumaArreglo implements Runnable {
         }
 
         System.out.println(
-	    "Thread local id: " + id
-            + " Thread Id: " + Thread.currentThread().getId()
-	    + " Suma Local: " + suma);
+	    "Thread local id: " + id+ " Thread Id: " + Thread.currentThread().getId()+ " Suma Local: " + suma);
 
 	resultado[id] = suma;
     }
@@ -67,7 +65,7 @@ public class SumaArreglo implements Runnable {
 	imprimir(arreglo);
 
 	for (int i = 0; i < hilos; i++) {
-	    trabajadores[i] = new Thread(new SumaArreglo(i));
+	    trabajadores[i] = new Thread(new SumaArregloRunnable(i));
 	    trabajadores[i].start();
 	}
 
