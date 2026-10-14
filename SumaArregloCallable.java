@@ -7,12 +7,12 @@ import java.util.concurrent.Future;
 import java.util.Arrays;
 import java.util.Random;
 
-public class SumaArreglo implements Callable<Integer> {
+public class SumaArregloCallable implements Callable<Integer> {
     static int hilos = 1;
     static int[] arreglo = null;
     private int id = -1;
 
-    SumaArreglo(int id) {
+    SumaArregloCallable(int id) {
         this.id = id;
     }
 
@@ -67,7 +67,7 @@ public class SumaArreglo implements Callable<Integer> {
         ExecutorService pool = Executors.newFixedThreadPool(hilos);
 
         for (int i = 0; i < hilos; i++) {
-            Callable<Integer> tarea = new SumaArreglo(i);
+            Callable<Integer> tarea = new SumaArregloCallable(i);
             Future<Integer> future = pool.submit(tarea);
             valores.add(future);
         }
